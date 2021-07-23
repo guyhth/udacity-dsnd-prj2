@@ -1,8 +1,53 @@
+# Import libraries
 import sys
+import numpy as np
+import pandas as pd
+import re
+from sqlalchemy import create_engine
+import pickle
 
+# Import from scikit-learn
+# TODO: Tidy up anything unused and combined, order where possible
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
+from sklearn.multioutput import MultiOutputClassifier
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+from sklearn.pipeline import Pipeline, FeatureUnion
+from sklearn.base import BaseEstimator, TransformerMixin
+
+# Import nltk and download required files
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem.wordnet import WordNetLemmatizer
+from nltk.tokenize import word_tokenize, sent_tokenize
+
+nltk.download(['punkt', 'wordnet', 'averaged_perceptron_tagger'])
 
 def load_data(database_filepath):
-    pass
+    """ Load data from database file
+
+    Arguments:
+        database_filename (str): path to database file
+
+    Returns:
+        X (DataFrame): DataFrame containing the messages
+        y (DataFrame): DataFrame containing the categories assigned to each message
+        category_names (list): List of category names
+    """
+    # Load data from database
+    engine = create_engine('sqlite:///' + database_filepath)
+    df = pd.read_sql_table('MessagesAndCategories', engine)
+
+    # Split into X and y variables
+    X = df['message']
+    y = df.iloc[:, 4:]
+
+    # Get a list of the category names
+    category_names = y.columns
+
+    return X, y, category_names
 
 
 def tokenize(text):
