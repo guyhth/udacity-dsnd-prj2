@@ -78,8 +78,10 @@ def save_data(df, database_filename):
 
 
 def main():
+    # Expect 4 arguments, otherwise print the usage guide
     if len(sys.argv) == 4:
 
+        # Pull filepaths from the command line arguments provided by the user 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
 
         print('Loading data...\n    MESSAGES: {}\n    CATEGORIES: {}'

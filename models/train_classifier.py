@@ -79,6 +79,7 @@ def build_model(gridsearch = False):
     Returns:
         pipeline (Pipeline): model
     """
+    # TF-IDF pipeline with multi-output classifier
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
