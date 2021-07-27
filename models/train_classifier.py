@@ -128,7 +128,7 @@ def save_model(model, model_filepath):
 
 
 def main():
-    # Valid scenarios are 2 or 3 arguments. Otherwise display usage guide 
+    # Valid scenarios are 3 or 4 arguments. Otherwise display usage guide 
     if (len(sys.argv) == 3) | (len(sys.argv) == 4):
         # Database and model filepaths are the first two args after the script name
         database_filepath, model_filepath = sys.argv[1:3]
