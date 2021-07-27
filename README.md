@@ -18,6 +18,7 @@ There are ways to tackle this, such as oversampling of the underrepresented cate
 
 The web app features an input field for a new messages to classify:
 ![Screenshot of the web app, showing the input field.](./screenshots/screenshot1.png)
+
 The results show the 36 categories, highlighting in green those that the model predicts relate to the message:
 ![Screenshot of the web app, showing the predicted categories.](./screenshots/screenshot2.png)
 
@@ -40,6 +41,7 @@ Python 3.x and the following libraries are required:
 - `app` directory
     - `run.py`: Launches the Flask web app.
     - `templates` directory: HTML/Jinja templates for the Flask web app.
+- `screenshots` directory: Screenshots for `README.md` (this file) 
 
 ### Running the code
 
