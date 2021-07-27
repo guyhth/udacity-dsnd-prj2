@@ -1,6 +1,31 @@
 # Disaster Response Pipeline Project
 
-### Instructions:
+## Introduction
+
+### Background
+
+TODO: Description of the project and objectives
+
+### The data
+
+TODO: describe model imbalance
+
+### The web app
+
+TODO: description and screenshots
+
+## Instructions
+
+### Installation
+
+TODO: Python and libraries required
+
+### Files
+
+TODO: List and description of files
+
+### Running the code
+
 1. Run the following commands in the project's root directory to set up your database and model.
 
     - To run ETL pipeline that cleans data and stores in database
