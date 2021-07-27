@@ -18,11 +18,21 @@ TODO: description and screenshots
 
 ### Installation
 
-TODO: Python and libraries required
+Python 3.x and the following libraries are required:
+- Data analysis and machine learning: NumPy, Scikit-Learn, NLTK
+- Database and files: SQLalchemy, Pickle
+- Web app and visualisation: Flask, Plotly
 
 ### Files
 
-TODO: List and description of files
+- `data` directory
+    - `disaster_messages.csv` and `disaster_categories.csv`: Raw data files for processing from Figure Eight.
+    - `process_data.py`: Runs the Extract, Transform, Load (ETL) pipeline to extract, clean and merge the data from the CSV files, and save it to an SQLite database.
+- `models` directory
+    - `train_classifier.py`: Loads the data from the SQLite database and runs a machine learning pipeline to train a model for classifying messages. Optionally, the model parameters can be optimised using GridSearchCV. The model is saved as a file for use by the web app.
+- `app` directory
+    - `run.py`: Launches the Flask web app.
+    - `templates` directory: HTML/Jinja templates for the Flask web app.
 
 ### Running the code
 
@@ -37,3 +47,11 @@ TODO: List and description of files
     `python run.py`
 
 3. Go to http://0.0.0.0:3001/
+
+## Acknowledgements
+
+Thank you to [Figure Eight](https://www.figure-eight.com/) for the dataset, and to [Udacity](https://www.udacity.com) for the excellent Data Scientist Nanodegree programme.
+
+## Licence
+
+This software is provided under the [MIT licence](https://opensource.org/licenses/MIT).
