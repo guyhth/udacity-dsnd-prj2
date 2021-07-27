@@ -52,6 +52,10 @@ def clean_data(df):
         # Convert column from string to numeric
         categories[column] = pd.to_numeric(categories[column])
 
+    # Convert the 'related' column to binary (contains 0, 1, 2 by default)
+    categories['related'] = categories['related'].astype('str').str.replace('2', '1')
+    categories['related'] = pd.to_numeric(categories['related'])
+
     # Drop the original categories column from df
     df.drop('categories', axis=1, inplace=True)
 
