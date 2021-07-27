@@ -67,7 +67,7 @@ def clean_data(df):
 
 
 def save_data(df, database_filename):
-    """ Save the data to an SQLite database file
+    """ Save data to an SQLite database. Table will be replaced if it already exists.
 
     Arguments:
         df (DataFrame): data to save
