@@ -92,7 +92,7 @@ def build_model(gridsearch = False):
         parameters = {
             'vect__ngram_range': ((1, 1), (1, 2)),
             'vect__stop_words' : (None, 'english'),
-            'clf__estimator__min_samples_split': (2, 3)
+            'clf__estimator__n_estimators': (50, 100)
         }
 
         pipeline = GridSearchCV(pipeline, param_grid=parameters, verbose=10)
